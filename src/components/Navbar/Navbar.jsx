@@ -1,7 +1,7 @@
 // src/components/Navbar/Navbar.jsx
 import { useState } from 'react';
 import styles from './Navbar.module.css';
-import webDevLogo from '../../assets/web-dev.PNG';
+
 
 function Navbar({ activeSection, scrollToSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ function Navbar({ activeSection, scrollToSection }) {
         {/* Logo */}
         
         <div className={styles.logo}>
-          <span className={styles.logoIcon}> <img src={webDevLogo} alt="Web Developer Logo" /></span>
+          <span className={styles.logoIcon}> <img src="/images/web-dev.PNG" alt="Web Developer Logo" /> </span>
           <span className={styles.logoText}><i>My Portfolio</i></span>
         </div>
 

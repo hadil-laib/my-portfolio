@@ -1,7 +1,7 @@
 // src/components/Hero/Hero.jsx
 import { useState, useEffect } from 'react';
 import styles from './Hero.module.css';
-import webDevLogo from '../../assets/web-dev.PNG';
+
 
 function Hero({ scrollToSection }) {
   const [introComplete, setIntroComplete] = useState(false);
@@ -90,8 +90,7 @@ export default developer;`}
         <div className={styles.photoCircle}>
           <div className={styles.glowEffect}></div>
           <div className={styles.photo}>
-             <img src={webDevLogo} alt="Web Developer Logo" className={styles.photoImg} />
-           
+           <img src="/images/web-dev.PNG" alt="Web Developer Logo" className={styles.photoImg} />
           </div>
           {/* Pour ajouter ta vraie photo:
           <img src="/votre-photo.jpg" alt="Your Name" className={styles.photoImg} />
