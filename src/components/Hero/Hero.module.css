@@ -1,0 +1,460 @@
+/* src/components/Hero/Hero.module.css */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: rgb(0, 0, 0);
+}
+
+/* Background de code flou */
+.codeBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.code {
+  color: #fa049c;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  filter: blur(2px);
+  animation: scrollCode 20s linear infinite;
+  white-space: pre;
+}
+
+@keyframes scrollCode {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Container de la photo */
+.photoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 10;
+}
+
+.photoContainer.photoMoved {
+  top: 100px;
+  left: 100px;
+  transform: translate(0, 0) scale(0.6);
+}
+
+/* Cercle de la photo */
+.photoCircle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Effet de lueur rose 
+.glowEffect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b403e0, #ad05b3, #8b00ff);
+  animation: rotate 3s linear infinite, pulse 2s ease-in-out infinite;
+  filter: blur(20px);
+  opacity: 0.8;
+}
+*/
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Photo */
+.photo {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fc05c6;
+  box-shadow: 
+    0 0 30px rgba(255, 0, 110, 0.5),
+    inset 0 0 20px rgba(255, 0, 110, 0.2);
+  overflow: hidden;
+}
+
+.emoji {
+  font-size: 8rem;
+  animation: wave 2s ease-in-out infinite;
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Effets de fumée */
+.smoke1, .smoke2, .smoke3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 0, 110, 0.3), transparent);
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: smokeAnimation 2s ease-out forwards;
+}
+
+.smoke1 {
+  top: 100px;
+  left: 100px;
+  animation-delay: 0s;
+}
+
+.smoke2 {
+  top: 120px;
+  left: 80px;
+  animation-delay: 0.3s;
+}
+
+.smoke3 {
+  top: 140px;
+  left: 110px;
+  animation-delay: 0.6s;
+}
+
+@keyframes smokeAnimation {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50px, -80px) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Contenu texte */
+.content {
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  margin-left: 400px;
+}
+
+.textContainer {
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Nom avec effet typewriter */
+.nameContainer {
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff006e, #ff4d94, #8b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px rgba(255, 0, 110, 0.5);
+}
+
+.cursor {
+  color: #ff006e;
+  animation: blink 0.8s infinite;
+  font-weight: 100;
+  -webkit-text-fill-color: #ff006e;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Bio */
+.bio {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+}
+
+/* Boutons */
+.buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.primaryButton,
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-family: inherit;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #ff006e, #8b00ff);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
+}
+
+.primaryButton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 0, 110, 0.6);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #ff006e;
+  border: 3px solid #ff006e;
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+}
+
+.secondaryButton:hover {
+  background: #ff006e;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 0, 110, 0.6);
+}
+
+.buttonIcon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonIcon {
+  transform: translateX(5px);
+}
+
+/* Liens sociaux */
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  background: rgba(255, 0, 110, 0.1);
+  border: 2px solid #ff006e;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.socialLink:hover {
+  background: #ff006e;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 0, 110, 0.5);
+}
+
+.socialIcon {
+  font-size: 1.5rem;
+}
+
+/* Message de chargement */
+.loadingText {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  font-size: 3rem;
+  color: #ff006e;
+}
+
+.loadingDot {
+  animation: loadingBounce 1s ease-in-out infinite;
+}
+
+.loadingDot:nth-child(1) { animation-delay: 0s; }
+.loadingDot:nth-child(2) { animation-delay: 0.2s; }
+.loadingDot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loadingBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Responsive - Tablette */
+@media (max-width: 1200px) {
+  .content {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .photoContainer.photoMoved {
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0) scale(0.5);
+  }
+
+  .name {
+    font-size: 4rem;
+  }
+
+  .bio {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .photoCircle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .emoji {
+    font-size: 5rem;
+  }
+
+  .photoContainer.photoMoved {
+    top: 100px;
+    transform: translate(-50%, 0) scale(0.4);
+  }
+
+  .content {
+    padding: 0 1.5rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .bio {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .code {
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsive - Très petits écrans */
+@media (max-width: 480px) {
+  .photoContainer.photoMoved {
+    top: 90px;
+    transform: translate(-50%, 0) scale(0.35);
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    font-size: 0.9rem;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .socialLink {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

@@ -1,0 +1,375 @@
+/* src/components/Contact/Contact.module.css */
+
+.contact {
+  width: 100%;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* En-tête */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(250, 248, 249);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(168, 3, 99, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contenu */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Informations */
+.info {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.infoTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color:  rgba(168, 3, 99, 0.9);
+  margin-bottom: 2rem;
+}
+
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.5rem;
+   background: linear-gradient(135deg, #ff0080 0%, rgb(53, 4, 39) 100%);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  background: rgb(197, 0, 122)20%;
+  transform: translateX(5px);
+}
+
+.infoCard:last-child {
+  margin-bottom: 0;
+}
+
+.infoIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.infoCard h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.infoLink {
+ color: #f8f4f6;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.3s ease;
+  word-break: break-all;
+}
+
+.infoLink:hover {
+  color: #f8f4f6;
+  transform: translateX(3px);
+}
+
+.infoText {
+  color: #f8f4f6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.quickNote {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(168, 85, 247, 0.1));
+  border-radius: 10px;
+  border-left: 4px solid #ff0080;
+}
+
+.quickNote p {
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Formulaire */
+.formContainer {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgba(168, 3, 99, 0.9);
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.input,
+.textarea {
+  padding: 1rem;
+  border: 2px solid rgb(197, 0, 122);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: rgb(53, 4, 39);
+  box-shadow: 0 0 0 3px rgba(208, 99, 230, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #ff0080 0%, rgb(53, 4, 39) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 8px 20px rgba(255, 0, 128, 0.3);
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 0, 128, 0.4);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.buttonIcon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) .buttonIcon {
+  transform: translateX(5px);
+}
+
+/* Spinner pour le chargement */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Messages de statut */
+.successMessage {
+  padding: 1rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.errorMessage {
+  padding: 1rem;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Note du formulaire */
+.formNote {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Responsive - Tablette */
+@media (max-width: 992px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .info,
+  .formContainer {
+    padding: 2rem;
+  }
+
+  .infoTitle,
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .infoCard {
+    padding: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infoIcon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Responsive - Très petits écrans */
+@media (max-width: 480px) {
+  .contact {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .info,
+  .formContainer {
+    padding: 1.5rem;
+  }
+
+  .infoTitle,
+  .formTitle {
+    font-size: 1.3rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .submitButton {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}

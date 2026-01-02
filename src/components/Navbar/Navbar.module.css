@@ -1,0 +1,257 @@
+/* src/components/Navbar/Navbar.module.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(255, 0, 110, 0.3);
+  border-bottom: 1px solid rgba(255, 0, 110, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logoIcon {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fc05c6;
+  box-shadow: 
+    0 0 30px rgba(255, 0, 110, 0.5),
+    inset 0 0 20px rgba(255, 0, 110, 0.2);
+  overflow: hidden;
+}
+.logoIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+.logoText {
+  background: linear-gradient(135deg, #ff0080 0%, rgb(53, 4, 39) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Menu Desktop */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.menuLink {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: inherit;
+}
+
+.menuLink:hover {
+  background: rgba(255, 0, 110, 0.2);
+  color: #ff4d94;
+  transform: translateY(-2px);
+}
+
+.menuLink.active {
+  color: #ff006e;
+  background: rgba(255, 0, 110, 0.25);
+  font-weight: 600;
+}
+
+.menuLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: #ff006e;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #ff006e;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburgerLine {
+  width: 28px;
+  height: 3px;
+  background: #ff006e;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+/* Menu Mobile */
+.mobileMenu {
+  display: none;
+  background: rgba(10, 10, 10, 0.98);
+  padding: 1rem 0;
+  box-shadow: 0 5px 20px rgba(255, 0, 110, 0.3);
+  animation: slideDown 0.3s ease;
+  border-bottom: 1px solid rgba(255, 0, 110, 0.3);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileMenu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenuLink {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  border-left: 3px solid transparent;
+}
+
+.mobileMenuLink:hover {
+  background: rgba(255, 0, 110, 0.2);
+  color: #ff4d94;
+  border-left-color: #ff006e;
+}
+
+.mobileMenuLink.active {
+  background: rgba(255, 0, 110, 0.25);
+  color: #ff006e;
+  border-left-color: #ff006e;
+  font-weight: 600;
+}
+
+/* Responsive - Tablette et Mobile */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .container {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+ 
+}
+@media (max-width: 768px) {
+  .logoIcon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* Responsive - Très petits écrans */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  
+
+  .mobileMenuLink {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
