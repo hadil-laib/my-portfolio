@@ -72,7 +72,7 @@ function App() {
       
      
       <footer className={styles.footer}>
-        <p>© 2025 - Portfolio Web Developer | Fait avec ⚛️ React + ⚡ Vite</p>
+        <p>© 2025 -  Web Developer Portfolio | using ⚛️ React + ⚡ Vite</p>
       </footer>
     </div>
   );
