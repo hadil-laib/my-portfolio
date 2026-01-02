@@ -1,5 +1,3 @@
-/* src/components/Hero/Hero.module.css */
-
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -11,7 +9,6 @@
   background: rgb(0, 0, 0);
 }
 
-/* Background de code flou */
 .codeBackground {
   position: absolute;
   top: 0;
@@ -37,7 +34,6 @@
   100% { transform: translateY(-50%); }
 }
 
-/* Container de la photo */
 .photoContainer {
   position: absolute;
   top: 50%;
@@ -53,7 +49,6 @@
   transform: translate(0, 0) scale(0.6);
 }
 
-/* Cercle de la photo */
 .photoCircle {
   position: relative;
   width: 300px;
@@ -64,7 +59,7 @@
   justify-content: center;
 }
 
-/* Effet de lueur rose 
+/* Effet  rose 
 .glowEffect {
   position: absolute;
   width: 100%;
@@ -76,6 +71,7 @@
   opacity: 0.8;
 }
 */
+
 @keyframes rotate {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -86,7 +82,6 @@
   50% { transform: scale(1.1); opacity: 1; }
 }
 
-/* Photo */
 .photo {
   position: relative;
   width: 300px;
@@ -120,7 +115,6 @@
   50% { transform: rotate(5deg); }
 }
 
-/* Effets de fumée */
 .smoke1, .smoke2, .smoke3 {
   position: absolute;
   width: 100px;
@@ -160,7 +154,6 @@
   }
 }
 
-/* Contenu texte */
 .content {
   position: relative;
   z-index: 5;
@@ -185,7 +178,6 @@
   }
 }
 
-/* Nom avec effet typewriter */
 .nameContainer {
   margin-bottom: 1.5rem;
 }
@@ -216,7 +208,6 @@
   51%, 100% { opacity: 0; }
 }
 
-/* Bio */
 .bio {
   font-size: 1.8rem;
   color: #ffffff;
@@ -226,7 +217,6 @@
   text-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
 }
 
-/* Boutons */
 .buttons {
   display: flex;
   gap: 1.5rem;
@@ -297,7 +287,6 @@
   transform: translateX(5px);
 }
 
-/* Liens sociaux */
 .socials {
   display: flex;
   gap: 1.5rem;
@@ -331,7 +320,6 @@
   font-size: 1.5rem;
 }
 
-/* Message de chargement */
 .loadingText {
   position: absolute;
   bottom: 100px;
@@ -356,7 +344,7 @@
   50% { transform: translateY(-20px); }
 }
 
-/* Responsive - Tablette */
+/* pc- Tablette */
 @media (max-width: 1200px) {
   .content {
     margin-left: 0;
@@ -378,7 +366,7 @@
   }
 }
 
-/* Responsive - Mobile */
+/* Mobile */
 @media (max-width: 768px) {
   .photoCircle {
     width: 250px;
@@ -432,7 +420,7 @@
   }
 }
 
-/* Responsive - Très petits écrans */
+/*  petits écrans */
 @media (max-width: 480px) {
   .photoContainer.photoMoved {
     top: 90px;

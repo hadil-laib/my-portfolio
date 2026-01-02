@@ -1,4 +1,4 @@
-// src/data/skillsData.js
+
 
 export const skillsData = {
  languages: [
@@ -25,5 +25,3 @@ export const skillsData = {
   
   
 };
-
-// Tu peux ajouter ou modifier les compétences selon ce que tu as appris!

@@ -1,4 +1,3 @@
-// src/components/Hero/Hero.jsx
 import { useState, useEffect } from 'react';
 import styles from './Hero.module.css';
 
@@ -8,10 +7,9 @@ function Hero({ scrollToSection }) {
   const [displayedText, setDisplayedText] = useState('');
   const [displayedBio, setDisplayedBio] = useState('');
   
-  const fullName = "HI, I'M LAIB HADIL"; // ← Remplace par ton nom
+  const fullName = "HI, I'M LAIB HADIL"; 
   const fullBio = "I'm a Junior React frontend Developer, I design and build user interfaces";
 
-  // Animation d'introduction (photo au centre puis vers le coin)
   useEffect(() => {
     const introTimer = setTimeout(() => {
       setIntroComplete(true);
@@ -20,7 +18,6 @@ function Hero({ scrollToSection }) {
     return () => clearTimeout(introTimer);
   }, []);
 
-  // Effet typewriter pour le nom
   useEffect(() => {
     if (!introComplete) return;
 
@@ -37,7 +34,7 @@ function Hero({ scrollToSection }) {
     return () => clearInterval(typingInterval);
   }, [introComplete, fullName]);
 
-  // Effet typewriter pour la bio
+  
 useEffect(() => {
     if (displayedText !== fullName) return;
 
@@ -55,12 +52,11 @@ useEffect(() => {
   }, [displayedText, fullName, fullBio]);
 
   return (
-    <div className={styles.hero}>
-      {/* Background de code flou */}
+    <div className={styles.hero}>    
       <div className={styles.codeBackground}>
         <pre className={styles.code}>
 {`const developer = {
-  name: "Your Name",
+  name: "Laib Hadil",
   skills: ["React", "JavaScript", "CSS"],
   passion: "Building amazing web apps",
   status: "Always learning 🚀"
@@ -76,7 +72,7 @@ export default developer;`}
         </pre>
       </div>
 
-      {/* Particules de fumée */}
+     
       {introComplete && (
         <>
           <div className={styles.smoke1}></div>
@@ -85,20 +81,17 @@ export default developer;`}
         </>
       )}
 
-      {/* Photo avec animation */}
+      
       <div className={`${styles.photoContainer} ${introComplete ? styles.photoMoved : ''}`}>
         <div className={styles.photoCircle}>
           <div className={styles.glowEffect}></div>
           <div className={styles.photo}>
            <img src="/images/web-dev.PNG" alt="Web Developer Logo" className={styles.photoImg} />
-          </div>
-          {/* Pour ajouter ta vraie photo:
-          <img src="/votre-photo.jpg" alt="Your Name" className={styles.photoImg} />
-          */}
+          </div>         
         </div>
       </div>
 
-      {/* Contenu principal qui apparaît après l'animation */}
+      
       {introComplete && (
         <div className={styles.content}>
           <div className={styles.textContainer}>
@@ -132,7 +125,7 @@ export default developer;`}
         </div>
       )}
 
-      {/* Message d'attente initial */}
+      
       {!introComplete && (
         <div className={styles.loadingText}>
           <span className={styles.loadingDot}>.</span>

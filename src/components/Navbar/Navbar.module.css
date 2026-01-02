@@ -1,5 +1,3 @@
-/* src/components/Navbar/Navbar.module.css */
-
 .navbar {
   position: fixed;
   top: 0;
@@ -23,7 +21,6 @@
   align-items: center;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -74,7 +71,6 @@
   background-clip: text;
 }
 
-/* Menu Desktop */
 .menu {
   display: flex;
   list-style: none;
@@ -121,7 +117,6 @@
   box-shadow: 0 0 10px #ff006e;
 }
 
-/* Hamburger Menu (Mobile) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -146,7 +141,6 @@
   box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
 }
 
-/* Menu Mobile */
 .mobileMenu {
   display: none;
   background: rgba(10, 10, 10, 0.98);
@@ -201,7 +195,7 @@
   font-weight: 600;
 }
 
-/* Responsive - Tablette et Mobile */
+/* Tablette et Mobile */
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -238,7 +232,7 @@
     height: 40px;
   }
 }
-/* Responsive - Très petits écrans */
+/* petits écrans */
 @media (max-width: 480px) {
   .container {
     padding: 0.8rem 1rem;

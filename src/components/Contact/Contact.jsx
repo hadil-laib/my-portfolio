@@ -1,4 +1,3 @@
-// src/components/Contact/Contact.jsx
 import { useState, useEffect } from 'react';
 import styles from './Contact.module.css';
 
@@ -9,7 +8,7 @@ function Contact() {
     email: '',
     message: ''
   });
-  const [status, setStatus] = useState(''); // 'sending', 'success', 'error'
+  const [status, setStatus] = useState('');  
 
   useEffect(() => {
     setIsVisible(true);
@@ -27,7 +26,7 @@ function Contact() {
     setStatus('sending');
 
     try {
-      // Utiliser Formspree pour envoyer l'email
+      /* Formspree */
       const response = await fetch('https://formspree.io/f/mojaovvj', {
         method: 'POST',
         headers: {
@@ -46,7 +45,7 @@ function Contact() {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
         
-        // Réinitialiser le message après 5 secondes
+       
         setTimeout(() => setStatus(''), 5000);
       } else {
         setStatus('error');
@@ -68,7 +67,7 @@ function Contact() {
         </div>
 
         <div className={styles.content}>
-          {/* Informations de contact */}
+          {/* Informations  */}
           <div className={styles.info}>
             <h3 className={styles.infoTitle}>Contact Information</h3>
             
@@ -113,7 +112,7 @@ function Contact() {
             </div>
           </div>
 
-          {/* Formulaire de contact */}
+          {/*  contact me */}
           <div className={styles.formContainer}>
             <h3 className={styles.formTitle}>Send Me a Message</h3>
             
@@ -130,7 +129,7 @@ function Contact() {
                   onChange={handleChange}
                   required
                   className={styles.input}
-                  placeholder="John Doe"
+                  placeholder="your name"
                   disabled={status === 'sending'}
                 />
               </div>
@@ -147,7 +146,7 @@ function Contact() {
                   onChange={handleChange}
                   required
                   className={styles.input}
-                  placeholder="john@example.com"
+                  placeholder="youremail@example.com"
                   disabled={status === 'sending'}
                 />
               </div>
@@ -169,7 +168,7 @@ function Contact() {
                 ></textarea>
               </div>
 
-              {/* Messages de statut */}
+              {/* Messages  */}
               {status === 'success' && (
                 <div className={styles.successMessage}>
                   ✅ Message sent successfully! I'll get back to you soon.

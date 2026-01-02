@@ -1,4 +1,3 @@
-// src/components/Navbar/Navbar.jsx
 import { useState } from 'react';
 import styles from './Navbar.module.css';
 
@@ -21,14 +20,13 @@ function Navbar({ activeSection, scrollToSection }) {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        {/* Logo */}
         
         <div className={styles.logo}>
           <span className={styles.logoIcon}> <img src="/images/web-dev.PNG" alt="Web Developer Logo" /> </span>
           <span className={styles.logoText}><i>My Portfolio</i></span>
         </div>
 
-        {/* Menu Desktop */}
+       
         <ul className={styles.menu}>
           {menuItems.map((item) => (
             <li key={item.id}>
@@ -44,7 +42,6 @@ function Navbar({ activeSection, scrollToSection }) {
           ))}
         </ul>
 
-        {/* Bouton Menu Mobile (Hamburger) */}
         <button
           className={styles.hamburger}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -56,7 +53,7 @@ function Navbar({ activeSection, scrollToSection }) {
         </button>
       </div>
 
-      {/* Menu Mobile */}
+      
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
           <ul>

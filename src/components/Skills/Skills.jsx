@@ -1,4 +1,3 @@
-// src/components/Skills/Skills.jsx
 import { useState, useEffect } from 'react';
 import { skillsData } from '../../data/skillsData';
 import styles from './Skills.module.css';
@@ -21,11 +20,11 @@ function Skills() {
         </div>
 
         <div className={styles.content}>
-          {/* Languages */}
+
           <div className={styles.category}>
             <h3 className={styles.categoryTitle}>
               <span className={styles.categoryIcon}>💻</span>
-              Langages
+              Languages
             </h3>
             <div className={styles.skillsGrid}>
               {skillsData.languages.map((skill, index) => (
@@ -37,7 +36,6 @@ function Skills() {
             </div>
           </div>
 
-          {/* Frameworks */}
           <div className={styles.category}>
             <h3 className={styles.categoryTitle}>
               <span className={styles.categoryIcon}>⚛️</span>
@@ -53,7 +51,6 @@ function Skills() {
             </div>
           </div>
 
-          {/* Tools */}
           <div className={styles.category}>
             <h3 className={styles.categoryTitle}>
               <span className={styles.categoryIcon}>🛠️</span>
@@ -68,8 +65,6 @@ function Skills() {
               ))}
             </div>
           </div>
-
-          {/* Concepts */}
           
           </div>
         </div>

@@ -1,4 +1,3 @@
-// src/components/Projects/Projects.jsx
 import { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import { projectsData } from '../../data/projectsData';

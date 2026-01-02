@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -10,7 +9,7 @@ import styles from './App.module.css';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
 
-  // Fonction pour faire défiler vers une section
+ 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -19,7 +18,7 @@ function App() {
     }
   };
 
-  // Détecte quelle section est visible pendant le scroll
+  
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'projects', 'skills', 'contact'];
@@ -42,36 +41,36 @@ function App() {
 
   return (
     <div className={styles.app}>
-      {/* Barre de navigation */}
+     
       <Navbar 
         activeSection={activeSection} 
         scrollToSection={scrollToSection} 
       />
       
-      {/* Contenu principal */}
+      
       <main className={styles.main}>
-        {/* Section Accueil */}
+        
         <section id="home" className={styles.section}>
           <Hero scrollToSection={scrollToSection} />
         </section>
         
-        {/* Section Projets */}
+      
         <section id="projects" className={styles.section}>
           <Projects />
         </section>
         
-        {/* Section Compétences */}
+       
         <section id="skills" className={styles.section}>
           <Skills />
         </section>
         
-        {/* Section Contact */}
+       
         <section id="contact" className={styles.section}>
           <Contact />
         </section>
       </main>
       
-      {/* Pied de page */}
+     
       <footer className={styles.footer}>
         <p>© 2025 - Portfolio Web Developer | Fait avec ⚛️ React + ⚡ Vite</p>
       </footer>

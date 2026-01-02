@@ -1,4 +1,3 @@
-// src/components/Projects/ProjectCard.jsx
 import { useState } from 'react';
 import styles from './ProjectCard.module.css';
 
@@ -17,7 +16,6 @@ function ProjectCard({ project }) {
 
       <p className={styles.description}>{project.description}</p>
 
-      {/* Technologies utilisées */}
       <div className={styles.techStack}>
         {project.techStack.map((tech, index) => (
           <span key={index} className={styles.techBadge}>
@@ -26,7 +24,6 @@ function ProjectCard({ project }) {
         ))}
       </div>
 
-      {/* Liens */}
       <div className={styles.links}>
         {project.githubLink && (
           <a 
@@ -53,7 +50,6 @@ function ProjectCard({ project }) {
         )}
       </div>
 
-      {/* Effet de survol */}
       {isHovered && <div className={styles.hoverEffect}></div>}
     </div>
   );

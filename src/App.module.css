@@ -1,4 +1,4 @@
-/* src/App.module.css */
+
 
 * {
   margin: 0;
@@ -40,7 +40,6 @@ body {
   position: relative;
 }
 
-/* Effet de lueur rose sur les sections */
 .section::before {
   content: '';
   position: absolute;
