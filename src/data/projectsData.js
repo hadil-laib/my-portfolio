@@ -69,7 +69,7 @@ export const projectsData = [
     id: 9,
     title: "daw-project",
     description: "This lab introduces Git and GitHub for version control. We learned to initialize a local repository, commit changes, create branches, and push code to GitHub. The goal was to set up a structured workflow for managing and collaborating on lab projects throughout the course.", // ← Remplace par ta description
-    techStack: ["Git", "GitHub", "Command Line / Terminal"],
+    techStack: ["html", "css", "JavaScript","MySQL","Wampservser"],
     githubLink: "https://github.com/hadil-laib/hadil/tree/daw",
     liveDemo: "",
   },
